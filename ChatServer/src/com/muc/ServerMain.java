@@ -16,6 +16,7 @@ public class ServerMain {
                 Socket clientSocket = serverSocket.accept();
                 System.out.println("Accepted connection from" +clientSocket);
                 Thread t = new Thread() {
+                    @Override
                     public void run() {
                         try {
                             handleClientSocket(clientSocket);
@@ -41,7 +42,7 @@ public class ServerMain {
             Thread.sleep(1000);
 
         }
-        outputStream.write("Hello World its ben\n".getBytes());
+
         clientSocket.close();
     }
 }
